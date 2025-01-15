@@ -5,13 +5,12 @@ import { notify } from "@/lib/utils/notify/notify";
 import { ProductService } from "@/services/product.service";
 import { setCartproducts } from "@/store/cartSlice";
 import { CartTypes } from "@/types/cart";
-import { ShoppingCartOutlined } from "@ant-design/icons";
+import { DeleteOutlined, ShoppingCartOutlined } from "@ant-design/icons";
 import { useQuery } from "@tanstack/react-query";
 import { Button, Card, Skeleton, Typography } from "antd";
-import Image from "next/image";
 import { useEffect } from "react";
 
-export default function Home() {
+export default function Cart() {
   const dispatch = useAppDispatch();
   const allCartProducts = useAppSelector(
     (state) => state.cart.cartProucts || []
@@ -34,11 +33,15 @@ export default function Home() {
     }
   }, []);
 
-  const addToCart = (product: CartTypes.CartProduct) => {
-    const updatedCart = [...allCartProducts, product];
-    dispatch(setCartproducts(updatedCart));
-    localStorage.setItem("cart", JSON.stringify(updatedCart));
-    notify("success", "Товар успешно добавлен в корзину");
+  const removeFromCart = (productId: string) => {
+    const updatedCart = allCartProducts?.filter(
+      (product) => product.id !== productId
+    );
+    if (updatedCart) {
+      dispatch(setCartproducts(updatedCart));
+      localStorage.setItem("cart", JSON.stringify(updatedCart));
+      notify("success", "Товар успешно удален из корзины");
+    }
   };
 
   return (
@@ -48,14 +51,14 @@ export default function Home() {
       </div>
 
       <Typography.Title className='font-medium mb-4' level={2}>
-        Товары
+        Товары в корзине
       </Typography.Title>
 
       <div className='flex gap-4'>
         {productDataLoading ? (
           <Skeleton />
         ) : (
-          productData?.map((p, i) => {
+          allCartProducts?.map((p, i) => {
             return (
               <Card hoverable key={p?.id || i}>
                 <div className='mb-2'>
@@ -70,10 +73,10 @@ export default function Home() {
                 <Button
                   block
                   type='primary'
-                  icon={<ShoppingCartOutlined />}
-                  onClick={() => addToCart(p)}
+                  icon={<DeleteOutlined />}
+                  onClick={() => removeFromCart(p?.id)}
                 >
-                  В корзину
+                  Удалить
                 </Button>
               </Card>
             );

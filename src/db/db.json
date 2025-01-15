@@ -1,0 +1,49 @@
+{
+  "category": [
+    {
+      "name": "demo catgeory 11",
+      "id": "8011"
+    },
+    {
+      "name": "test category",
+      "id": "7ee0"
+    },
+    {
+      "name": "category 555",
+      "id": "e2a2"
+    },
+    {
+      "name": "ddddd",
+      "id": "e28d"
+    }
+  ],
+  "product": [
+    {
+      "id": "cea5",
+      "name": "demo producta",
+      "description": "sdasdasdasdasd",
+      "category": {
+        "id": "8011",
+        "name": "demo catgeory 11"
+      }
+    },
+    {
+      "id": "16f6",
+      "name": "grdgdfgdfg",
+      "description": "dfgdfgdf",
+      "category": {
+        "name": "ddddd",
+        "id": "e28d"
+      }
+    },
+    {
+      "name": "dfgdfgdf",
+      "category": {
+        "name": "category 555",
+        "id": "e2a2"
+      },
+      "description": "fdgdfgd",
+      "id": "bb61"
+    }
+  ]
+}
