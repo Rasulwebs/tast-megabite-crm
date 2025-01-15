@@ -4,10 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "concurrently \"next dev --turbopack\" \"npx json-server --watch src/db/db.json --port 8080\"",
-    "predev": "npm run build:config",
-    "prebuild": "npm run build:config",
     "build": "next build",
-    "build:config": "esbuild next.config.ts --bundle --outfile=next.config.js --platform=node --target=es2020",
     "start": "next start",
     "lint": "next lint"
   },
