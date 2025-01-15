@@ -20,6 +20,6 @@ export const categoryColumn: ColumnType<CategoryTypes.Category>[] = [
     title: "Действие",
     dataIndex: "action",
     key: "action",
-    render: (value, record, index) => <CategorytableAction category={record} />,
+    render: (value, record) => <CategorytableAction category={record} />,
   },
 ];

@@ -66,7 +66,6 @@ export const CreateProductModal = () => {
   const {
     data: categories,
     isLoading: categoriesLoading,
-    error: categoryDataError,
   } = useQuery({
     queryKey: ["getCAtegories"],
     queryFn: () => CategoryService.getCategories(),
