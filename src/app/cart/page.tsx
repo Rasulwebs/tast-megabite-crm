@@ -2,11 +2,9 @@
 
 import { useAppDispatch, useAppSelector } from "@/hooks/redux-hooks";
 import { notify } from "@/lib/utils/notify/notify";
-import { ProductService } from "@/services/product.service";
 import { setCartproducts } from "@/store/cartSlice";
 import { DeleteOutlined } from "@ant-design/icons";
-import { useQuery } from "@tanstack/react-query";
-import { Button, Card, Skeleton, Typography } from "antd";
+import { Button, Card, Typography } from "antd";
 import { useEffect } from "react";
 
 export default function Cart() {
@@ -14,14 +12,7 @@ export default function Cart() {
   const allCartProducts = useAppSelector(
     (state) => state.cart.cartProucts || []
   );
-  const {
-    data: productData,
-    isLoading: productDataLoading,
-    error: productDataError,
-  } = useQuery({
-    queryKey: ["getProducts"],
-    queryFn: () => ProductService.getProducts(),
-  });
+
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -54,10 +45,7 @@ export default function Cart() {
       </Typography.Title>
 
       <div className='flex gap-4'>
-        {productDataLoading ? (
-          <Skeleton />
-        ) : (
-          allCartProducts?.map((p, i) => {
+        {allCartProducts?.map((p, i) => {
             return (
               <Card hoverable key={p?.id || i}>
                 <div className='mb-2'>
@@ -80,7 +68,7 @@ export default function Cart() {
               </Card>
             );
           })
-        )}
+        }
       </div>
     </div>
   );

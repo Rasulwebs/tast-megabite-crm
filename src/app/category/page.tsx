@@ -20,7 +20,6 @@ export default function Category() {
   const {
     data: categoryData,
     isLoading: categoryDataLoading,
-    error: categoryDataError,
   } = useQuery({
     queryKey: ["getAllCategory"],
     queryFn: () => CategoryService.getCategories(),

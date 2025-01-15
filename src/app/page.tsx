@@ -18,7 +18,6 @@ export default function Home() {
   const {
     data: productData,
     isLoading: productDataLoading,
-    error: productDataError,
   } = useQuery({
     queryKey: ["getProducts"],
     queryFn: () => ProductService.getProducts(),

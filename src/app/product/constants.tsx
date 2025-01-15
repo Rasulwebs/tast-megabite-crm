@@ -15,11 +15,7 @@ export const productColumn: ColumnType<ProductTypes.Product>[] = [
     dataIndex: "name",
     key: "name",
   },
-  //   {
-  //     title: "Категория",
-  //     dataIndex: "categoryName",
-  //     key: "categoryName",
-  //   },
+
   {
     title: "Категория",
     dataIndex: "categoryName",
