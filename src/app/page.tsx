@@ -8,7 +8,6 @@ import { CartTypes } from "@/types/cart";
 import { ShoppingCartOutlined } from "@ant-design/icons";
 import { useQuery } from "@tanstack/react-query";
 import { Button, Card, Skeleton, Typography } from "antd";
-import Image from "next/image";
 import { useEffect } from "react";
 
 export default function Home() {

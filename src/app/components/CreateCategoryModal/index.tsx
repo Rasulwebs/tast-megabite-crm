@@ -2,7 +2,6 @@ import { useAppDispatch, useAppSelector } from "@/hooks/redux-hooks";
 import { addNotificationAxios } from "@/lib/utils/axiosNotifications";
 import { notify } from "@/lib/utils/notify/notify";
 import { CategoryService } from "@/services/category.service";
-import { RootState } from "@/store";
 import {
   setCategoryName,
   setId,

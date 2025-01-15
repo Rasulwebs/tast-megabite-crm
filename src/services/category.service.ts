@@ -1,6 +1,5 @@
 import { appInstance } from "@/configs/axios.config";
 import { CategoryTypes } from "@/types/category";
-import { AxiosResponse } from "axios";
 
 export const CategoryService = {
   async getCategories() {

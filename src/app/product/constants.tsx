@@ -1,8 +1,4 @@
-import { CategoryTypes } from "@/types/category";
-import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
-import { Button } from "antd";
 import { ColumnType } from "antd/es/table";
-import { CategorytableAction } from "../components/Actions/CategoryTableActions";
 import { ProductTableAction } from "../components/Actions/ProductTableAction";
 import { ProductTypes } from "../../types/product";
 

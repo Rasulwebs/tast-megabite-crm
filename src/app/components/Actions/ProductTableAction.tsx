@@ -1,14 +1,9 @@
 import { useAppDispatch } from "@/hooks/redux-hooks";
 import { addNotificationAxios } from "@/lib/utils/axiosNotifications";
 import { notify } from "@/lib/utils/notify/notify";
-import { CategoryService } from "@/services/category.service";
 import { ProductService } from "@/services/product.service";
-import {
-  setCategoryName,
-  setIsOpenCategoryCreateModal,
-} from "@/store/categorySlice";
+
 import { setIsOpenProductCreateModal, setProduct } from "@/store/productSlice";
-import { CategoryTypes } from "@/types/category";
 import { ProductTypes } from "@/types/product";
 import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
